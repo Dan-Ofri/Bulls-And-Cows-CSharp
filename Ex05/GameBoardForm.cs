@@ -21,6 +21,7 @@ namespace Ex05
             InitializeComponent();
 
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormClosing += GameBoardForm_FormClosing;
 
             r_NumOfGuesses = i_NumOfGuesses;
             r_Session = new GameSession();
@@ -33,6 +34,11 @@ namespace Ex05
             r_SecretCodeButtons.Add(secretButton4);
 
             startGame();
+        }
+
+        private void GameBoardForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void startGame()

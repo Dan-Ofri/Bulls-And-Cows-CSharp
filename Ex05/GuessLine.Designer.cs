@@ -54,7 +54,7 @@
             this.guess2.Location = new System.Drawing.Point(46, 3);
             this.guess2.Name = "guess2";
             this.guess2.Size = new System.Drawing.Size(40, 40);
-            this.guess2.TabIndex = 0;
+            this.guess2.TabIndex = 10;
             this.guess2.UseVisualStyleBackColor = true;
             // 
             // guess3
@@ -63,7 +63,7 @@
             this.guess3.Location = new System.Drawing.Point(92, 3);
             this.guess3.Name = "guess3";
             this.guess3.Size = new System.Drawing.Size(40, 40);
-            this.guess3.TabIndex = 0;
+            this.guess3.TabIndex = 30;
             this.guess3.UseVisualStyleBackColor = true;
             // 
             // guess4
@@ -72,7 +72,7 @@
             this.guess4.Location = new System.Drawing.Point(138, 3);
             this.guess4.Name = "guess4";
             this.guess4.Size = new System.Drawing.Size(40, 40);
-            this.guess4.TabIndex = 0;
+            this.guess4.TabIndex = 40;
             this.guess4.UseVisualStyleBackColor = true;
             // 
             // submitButton
@@ -81,7 +81,7 @@
             this.submitButton.Location = new System.Drawing.Point(184, 13);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(40, 20);
-            this.submitButton.TabIndex = 0;
+            this.submitButton.TabIndex = 50;
             this.submitButton.Text = "-->>";
             this.submitButton.UseVisualStyleBackColor = true;
             // 

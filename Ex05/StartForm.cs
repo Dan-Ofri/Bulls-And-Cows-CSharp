@@ -17,12 +17,24 @@ namespace Ex05
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormClosing += StartForm_FormClosing;
+        }
+
+        private void StartForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             GameBoardForm mainForm = new GameBoardForm(m_NumOfGuesses);
             mainForm.StartPosition = FormStartPosition.CenterScreen;
+
+            mainForm.FormClosed += (s, args) =>
+                {
+                    Application.Exit();
+                };
+
             mainForm.Show();
             this.Hide();
         }
