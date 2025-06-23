@@ -59,6 +59,7 @@
             this.ClientSize = new System.Drawing.Size(390, 184);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnCounter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "StartForm";
             this.Text = "Bool Pgia";
             this.ResumeLayout(false);

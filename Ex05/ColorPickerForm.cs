@@ -7,6 +7,7 @@ namespace Ex05
 {
     public partial class ColorPickerForm : Form
     {
+        public eColor SelectedEnumColor { get; private set; }
         public Color SelectedColor { get; private set; }
         private Dictionary<Button, eColor> r_ButtonToColorMap = new Dictionary<Button, eColor>();
 
@@ -46,7 +47,8 @@ namespace Ex05
 
             if (r_ButtonToColorMap.TryGetValue(clickedButton, out eColor chosenColor))
             {
-                SelectedColor = chosenColor;
+                SelectedEnumColor = chosenColor;
+                SelectedColor = clickedButton.BackColor;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
