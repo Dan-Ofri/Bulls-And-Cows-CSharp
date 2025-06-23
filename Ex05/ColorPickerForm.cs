@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ex05
@@ -9,7 +10,15 @@ namespace Ex05
     {
         public eColor SelectedEnumColor { get; private set; }
         public Color SelectedColor { get; private set; }
+
         private Dictionary<Button, eColor> r_ButtonToColorMap = new Dictionary<Button, eColor>();
+
+        public static Dictionary<eColor, Color> EnumToColorMap { get; private set; }
+
+        public List<eColor> AvailableColors
+        {
+            get { return r_ButtonToColorMap.Values.ToList(); }
+        }
 
         public ColorPickerForm()
         {
@@ -21,16 +30,18 @@ namespace Ex05
         private void mapButtonsToColors()
         {
             r_ButtonToColorMap = new Dictionary<Button, eColor>
-                                     {
-                                         { btnRed, eColor.Red },
-                                         { btnBlue, eColor.Blue },
-                                         { btnGreen, eColor.Green },
-                                         { btnYellow, eColor.Yellow },
-                                         { btnOrange, eColor.Orange },
-                                         { btnPurple, eColor.Purple },
-                                         { btnLightBlue, eColor.LightBlue },
-                                         { btnPink, eColor.Pink }
-                                     };
+            {
+                { btnRed, eColor.Red },
+                { btnBlue, eColor.Blue },
+                { btnGreen, eColor.Green },
+                { btnYellow, eColor.Yellow },
+                { btnOrange, eColor.Orange },
+                { btnPurple, eColor.Purple },
+                { btnLightBlue, eColor.LightBlue },
+                { btnPink, eColor.Pink }
+            };
+
+            EnumToColorMap = r_ButtonToColorMap.ToDictionary(pair => pair.Value, pair => pair.Key.BackColor);
         }
 
         private void hookButtonEvents()
@@ -55,4 +66,3 @@ namespace Ex05
         }
     }
 }
-

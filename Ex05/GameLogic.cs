@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex05
 {
     public class GameLogic
     {
         private readonly Random r_Random = new Random();
+        private readonly List<eColor> r_AllowedColors;
+
+        public GameLogic()
+        {
+            r_AllowedColors = Enum.GetValues(typeof(eColor)).Cast<eColor>().ToList();
+        }
 
         public List<eColor> GenerateSecretCode()
         {
-            List<eColor> colors = GameSettings.AllowedColors.ToList();
+            List<eColor> colors = new List<eColor>(r_AllowedColors);
             List<eColor> code = new List<eColor>();
 
             while (code.Count < GameSettings.CodeLength)
@@ -54,5 +58,4 @@ namespace Ex05
             return i_Feedback.Hits == GameSettings.CodeLength;
         }
     }
-
 }

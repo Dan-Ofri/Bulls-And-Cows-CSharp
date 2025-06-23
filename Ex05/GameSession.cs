@@ -10,10 +10,11 @@ namespace Ex05
         public bool IsGameOver => CurrentGuessNumber >= Board.MaxGuesses;
         public bool IsWon { get; private set; } = false;
 
-        private readonly GameLogic r_Logic = new GameLogic();
+        private GameLogic r_Logic;
 
         public void InitializeNewGame(int i_MaxGuesses)
         {
+            r_Logic = new GameLogic(); // עובד לפי כל הצבעים ב־enum
             Board = new Board(i_MaxGuesses);
             SecretCode = r_Logic.GenerateSecretCode();
             Board.SetSecretCode(SecretCode);

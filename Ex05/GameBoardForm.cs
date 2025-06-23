@@ -7,64 +7,85 @@ namespace Ex05
 {
     public partial class GameBoardForm : Form
     {
+        private const int k_CodeLength = 4;
         private readonly int r_NumOfGuesses;
-        private GameSession m_GameSession;
-        private readonly List<Button[]> r_GuessButtons = new List<Button[]>();
+
+        private readonly List<List<Button>> r_GuessButtons = new List<List<Button>>();
         private readonly List<Button> r_SubmitButtons = new List<Button>();
+        private readonly List<Button> r_FeedbackButtons = new List<Button>();
+        private readonly List<Button> r_SecretCodeButtons = new List<Button>();
+
+        private GameSession r_Session;
 
         public GameBoardForm(int i_NumOfGuesses)
         {
             InitializeComponent();
             r_NumOfGuesses = i_NumOfGuesses;
-            this.Text = "Bulls and Cows";
-            this.Size = new Size(500, 600);
+            r_Session = new GameSession();
+            r_Session.InitializeNewGame(r_NumOfGuesses);
             startGame();
         }
 
         private void startGame()
         {
-            m_GameSession = new GameSession();
-            m_GameSession.InitializeNewGame(r_NumOfGuesses);
             buildBoardUI();
         }
 
         private void buildBoardUI()
         {
-            int verticalSpacing = 50;
+            int spacing = 10;
+            int buttonSize = 40;
+            int startX = 20;
+            int startY = 20;
 
-            for (int i = 0; i < r_NumOfGuesses; i++)
+            for (int col = 0; col < k_CodeLength; col++)
             {
-                Button[] guessRow = new Button[GameSettings.CodeLength];
+                Button secretButton = new Button();
+                secretButton.Size = new Size(buttonSize, buttonSize);
+                secretButton.Location = new Point(startX + col * (buttonSize + spacing), startY);
+                secretButton.BackColor = Color.Black;
+                secretButton.Enabled = false;
 
-                for (int j = 0; j < GameSettings.CodeLength; j++)
+                this.Controls.Add(secretButton);
+                r_SecretCodeButtons.Add(secretButton);
+            }
+
+            for (int row = 0; row < r_NumOfGuesses; row++)
+            {
+                List<Button> guessRow = new List<Button>();
+                for (int col = 0; col < k_CodeLength; col++)
                 {
-                    Button colorButton = new Button()
-                    {
-                        BackColor = Color.LightGray,
-                        Enabled = i == 0,
-                        Location = new Point(20 + j * 45, 20 + i * verticalSpacing),
-                        Size = new Size(40, 40),
-                        Tag = new Point(i, j)
-                    };
+                    Button guessButton = new Button();
+                    guessButton.Size = new Size(buttonSize, buttonSize);
+                    guessButton.Location = new Point(startX + col * (buttonSize + spacing), startY + (row + 1) * (buttonSize + spacing));
+                    guessButton.Enabled = row == 0;
+                    guessButton.BackColor = Color.LightGray;
+                    guessButton.Tag = new Point(row, col);
+                    guessButton.Click += colorButton_Click;
 
-                    colorButton.Click += colorButton_Click;
-                    this.Controls.Add(colorButton);
-                    guessRow[j] = colorButton;
+                    this.Controls.Add(guessButton);
+                    guessRow.Add(guessButton);
                 }
-
-                Button submitButton = new Button()
-                {
-                    Text = "→",
-                    Location = new Point(220, 20 + i * verticalSpacing),
-                    Size = new Size(40, 40),
-                    Enabled = false,
-                    Tag = i
-                };
-                submitButton.Click += submitButton_Click;
-                this.Controls.Add(submitButton);
-
                 r_GuessButtons.Add(guessRow);
+
+                Button submitButton = new Button();
+                submitButton.Size = new Size(40, buttonSize);
+                submitButton.Location = new Point(startX + k_CodeLength * (buttonSize + spacing), startY + (row + 1) * (buttonSize + spacing));
+                submitButton.Text = "→";
+                submitButton.Enabled = false;
+                submitButton.Tag = row;
+                submitButton.Click += submitButton_Click;
+
+                this.Controls.Add(submitButton);
                 r_SubmitButtons.Add(submitButton);
+
+                Button feedbackButton = new Button();
+                feedbackButton.Size = new Size(buttonSize, buttonSize);
+                feedbackButton.Location = new Point(startX + (k_CodeLength + 1) * (buttonSize + spacing), startY + (row + 1) * (buttonSize + spacing));
+                feedbackButton.Enabled = false;
+
+                this.Controls.Add(feedbackButton);
+                r_FeedbackButtons.Add(feedbackButton);
             }
         }
 
@@ -79,10 +100,8 @@ namespace Ex05
             {
                 if (colorForm.ShowDialog() == DialogResult.OK)
                 {
-                    Color chosenColor = colorForm.SelectedColor;
                     btn.BackColor = colorForm.SelectedColor;
-
-                    btn.Tag = (row, col, chosenColor);
+                    btn.Tag = (row, col, colorForm.SelectedEnumColor);
 
                     if (isRowFilled(row))
                     {
@@ -96,7 +115,7 @@ namespace Ex05
         {
             foreach (Button btn in r_GuessButtons[i_Row])
             {
-                if (!(btn.Tag is ValueTuple<int, int, eColor>))
+                if (btn.BackColor == Color.LightGray)
                 {
                     return false;
                 }
@@ -112,51 +131,50 @@ namespace Ex05
             List<eColor> guess = new List<eColor>();
             foreach (Button btn in r_GuessButtons[row])
             {
-                var tag = (ValueTuple<int, int, eColor>)btn.Tag;
-                guess.Add(tag.Item3);
-                btn.Enabled = false;
-            }
-
-            submitBtn.Enabled = false;
-            Feedback feedback = m_GameSession.SubmitGuess(guess);
-
-            if (m_GameSession.IsWon)
-            {
-                MessageBox.Show($"You won in {m_GameSession.CurrentGuessNumber} guesses!", "Victory");
-                disableAll();
-            }
-            else if (m_GameSession.IsGameOver)
-            {
-                MessageBox.Show("No more guesses. You lost.", "Game Over");
-                disableAll();
-            }
-            else
-            {
-                enableNextRow(row + 1);
-            }
-        }
-
-        private void enableNextRow(int i_Row)
-        {
-            foreach (Button btn in r_GuessButtons[i_Row])
-            {
-                btn.Enabled = true;
-            }
-        }
-
-        private void disableAll()
-        {
-            foreach (Button[] row in r_GuessButtons)
-            {
-                foreach (Button btn in row)
+                if (btn.Tag is ValueTuple<int, int, eColor> tag)
                 {
-                    btn.Enabled = false;
+                    guess.Add(tag.Item3);
                 }
             }
 
-            foreach (Button btn in r_SubmitButtons)
+            Feedback feedback = r_Session.SubmitGuess(guess);
+            int bulls = feedback.Hits;
+            int cows = feedback.Blows;
+
+            r_FeedbackButtons[row].Text = string.Format("{0}B {1}C", bulls, cows);
+
+            foreach (Button btn in r_GuessButtons[row])
             {
                 btn.Enabled = false;
+            }
+            submitBtn.Enabled = false;
+
+            if (r_Session.IsWon)
+            {
+                MessageBox.Show("You won!");
+                revealSecret();
+                return;
+            }
+
+            if (!r_Session.IsGameOver)
+            {
+                foreach (Button btn in r_GuessButtons[row + 1])
+                {
+                    btn.Enabled = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("You lost!");
+                revealSecret();
+            }
+        }
+
+        private void revealSecret()
+        {
+            for (int i = 0; i < k_CodeLength; i++)
+            {
+                r_SecretCodeButtons[i].BackColor = ColorPickerForm.EnumToColorMap[r_Session.SecretCode[i]];
             }
         }
     }
