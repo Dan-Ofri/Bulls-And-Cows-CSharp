@@ -23,6 +23,11 @@ namespace Ex05
         public ColorPickerForm()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            this.Text = "Pick a Color";
+            this.TopMost = true; // Make sure it shows on top of other forms
+
             mapButtonsToColors();
             hookButtonEvents();
         }

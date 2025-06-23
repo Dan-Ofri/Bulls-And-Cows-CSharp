@@ -57,6 +57,12 @@
     <Compile Include="GameLogic.cs" />
     <Compile Include="GameSession.cs" />
     <Compile Include="GameSettings.cs" />
+    <Compile Include="GuessLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GuessLine.Designer.cs">
+      <DependentUpon>GuessLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameBoardForm.resx">
       <DependentUpon>GameBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuessLine.resx">
+      <DependentUpon>GuessLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>

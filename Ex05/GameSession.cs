@@ -14,7 +14,7 @@ namespace Ex05
 
         public void InitializeNewGame(int i_MaxGuesses)
         {
-            r_Logic = new GameLogic(); // עובד לפי כל הצבעים ב־enum
+            r_Logic = new GameLogic();
             Board = new Board(i_MaxGuesses);
             SecretCode = r_Logic.GenerateSecretCode();
             Board.SetSecretCode(SecretCode);

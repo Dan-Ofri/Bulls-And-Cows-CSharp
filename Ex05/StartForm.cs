@@ -16,11 +16,13 @@ namespace Ex05
         public StartForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             GameBoardForm mainForm = new GameBoardForm(m_NumOfGuesses);
+            mainForm.StartPosition = FormStartPosition.CenterScreen;
             mainForm.Show();
             this.Hide();
         }
