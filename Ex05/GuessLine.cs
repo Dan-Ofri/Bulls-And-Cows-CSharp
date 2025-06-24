@@ -12,6 +12,8 @@ namespace Ex05
         private readonly List<Button> m_FeedbackButtons = new List<Button>();
         private readonly Dictionary<Button, eColor> m_ButtonColors = new Dictionary<Button, eColor>();
         private Button m_SubmitButton;
+        public static readonly Color HitColor = Color.Black;
+        public static readonly Color BlowColor = Color.Yellow;
 
         public GuessLine()
         {
@@ -123,12 +125,12 @@ namespace Ex05
 
             for (int i = 0; i < i_Bulls && index < m_FeedbackButtons.Count; i++, index++)
             {
-                m_FeedbackButtons[index].BackColor = GameSettings.HitColor;
+                m_FeedbackButtons[index].BackColor = HitColor;
             }
 
             for (int i = 0; i < i_Cows && index < m_FeedbackButtons.Count; i++, index++)
             {
-                m_FeedbackButtons[index].BackColor = GameSettings.BlowColor;
+                m_FeedbackButtons[index].BackColor = BlowColor;
             }
         }
     }
