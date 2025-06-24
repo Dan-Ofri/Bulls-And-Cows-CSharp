@@ -7,13 +7,13 @@ namespace Ex05
 {
     public partial class GameBoardForm : Form
     {
-        private const int k_CodeLength = GameSettings.CodeLength;
+        private const int k_CodeLength = GameSettings.k_CodeLength;
 
         private readonly int r_NumOfGuesses;
         private readonly List<GuessLine> r_GuessLines = new List<GuessLine>();
         private readonly List<Button> r_SecretCodeButtons = new List<Button>();
 
-        private int m_CurrentGuessLineIndex = 0;
+        private int m_CurrentGuessLineIndex;
         private readonly GameSession r_Session;
 
         public GameBoardForm(int i_NumOfGuesses)
@@ -146,7 +146,7 @@ namespace Ex05
         private void submitButton_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if(btn == null)
+            if (btn == null)
             {
                 return;
             }
@@ -158,14 +158,16 @@ namespace Ex05
             currentGuessLine.DisplayFeedback(feedback.Hits, feedback.Blows);
             currentGuessLine.DisableAllButtons();
 
-            if (r_Session.IsWon || r_Session.IsGameOver)
+            if (r_Session.State == eGameState.Won ||
+                r_Session.State == eGameState.Lost)
             {
                 revealSecret();
-                return;
             }
-
-            m_CurrentGuessLineIndex++;
-            configureGuessLine(m_CurrentGuessLineIndex);
+            else if (r_Session.State == eGameState.InProgress)
+            {
+                m_CurrentGuessLineIndex++;
+                configureGuessLine(m_CurrentGuessLineIndex);
+            }
         }
 
         private void revealSecret()

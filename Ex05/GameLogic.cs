@@ -19,7 +19,7 @@ namespace Ex05
             List<eColor> colors = new List<eColor>(r_AllowedColors);
             List<eColor> code = new List<eColor>();
 
-            while (code.Count < GameSettings.CodeLength)
+            while (code.Count < GameSettings.k_CodeLength)
             {
                 int index = r_Random.Next(colors.Count);
                 eColor candidate = colors[index];
@@ -38,7 +38,7 @@ namespace Ex05
             int hits = 0;
             int blows = 0;
 
-            for (int i = 0; i < GameSettings.CodeLength; i++)
+            for (int i = 0; i < GameSettings.k_CodeLength; i++)
             {
                 if (i_SecretCode[i] == i_Guess[i])
                 {
@@ -55,7 +55,7 @@ namespace Ex05
 
         public bool IsWinningGuess(Feedback i_Feedback)
         {
-            return i_Feedback.Hits == GameSettings.CodeLength;
+            return i_Feedback.Hits == GameSettings.k_CodeLength;
         }
     }
 }

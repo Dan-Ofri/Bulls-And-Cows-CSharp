@@ -47,6 +47,7 @@
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="eColor.cs" />
+    <Compile Include="eGameState.cs" />
     <Compile Include="Feedback.cs" />
     <Compile Include="GameBoardForm.cs">
       <SubType>Form</SubType>

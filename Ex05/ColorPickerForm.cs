@@ -40,7 +40,7 @@ namespace Ex05
             r_ButtonToColorMap.Add(btnLightBlue, eColor.LightBlue);
             r_ButtonToColorMap.Add(btnPink, eColor.Pink);
 
-            EnumToColorMap = r_ButtonToColorMap.ToDictionary(pair => pair.Value, pair => pair.Key.BackColor);
+            EnumToColorMap = r_ButtonToColorMap.ToDictionary(i_Pair => i_Pair.Value, i_Pair => i_Pair.Key.BackColor);
         }
 
         private void hookButtonEvents()

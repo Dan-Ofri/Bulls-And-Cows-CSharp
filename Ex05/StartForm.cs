@@ -5,7 +5,7 @@ namespace Ex05
 {
     public partial class StartForm : Form
     {
-        private int m_NumOfGuesses = GameSettings.MinGuesses;
+        private int m_NumOfGuesses = GameSettings.k_MinGuesses;
 
         public StartForm()
         {
@@ -38,12 +38,13 @@ namespace Ex05
         {
             m_NumOfGuesses++;
 
-            if (m_NumOfGuesses > GameSettings.MaxGuesses)
+            if (m_NumOfGuesses > GameSettings.K_MaxGuesses)
             {
-                m_NumOfGuesses = GameSettings.MinGuesses;
+                m_NumOfGuesses = GameSettings.k_MinGuesses;
             }
 
-            btnCounter.Text = $"Number of guesses: {m_NumOfGuesses}";
+            const string k_LabelTemplate = "Number of guesses: {0}";
+            btnCounter.Text = string.Format(k_LabelTemplate, m_NumOfGuesses);
         }
     }
 }
