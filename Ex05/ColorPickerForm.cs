@@ -11,14 +11,11 @@ namespace Ex05
         public eColor SelectedEnumColor { get; private set; }
         public Color SelectedColor { get; private set; }
 
-        private Dictionary<Button, eColor> r_ButtonToColorMap = new Dictionary<Button, eColor>();
+        private readonly Dictionary<Button, eColor> r_ButtonToColorMap = new Dictionary<Button, eColor>();
 
         public static Dictionary<eColor, Color> EnumToColorMap { get; private set; }
 
-        public List<eColor> AvailableColors
-        {
-            get { return r_ButtonToColorMap.Values.ToList(); }
-        }
+        public List<eColor> AvailableColors => r_ButtonToColorMap.Values.ToList();
 
         public ColorPickerForm()
         {
@@ -26,7 +23,7 @@ namespace Ex05
 
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.Text = "Pick a Color";
-            this.TopMost = true; // Make sure it shows on top of other forms
+            this.TopMost = true;
 
             mapButtonsToColors();
             hookButtonEvents();
@@ -34,17 +31,14 @@ namespace Ex05
 
         private void mapButtonsToColors()
         {
-            r_ButtonToColorMap = new Dictionary<Button, eColor>
-            {
-                { btnRed, eColor.Red },
-                { btnBlue, eColor.Blue },
-                { btnGreen, eColor.Green },
-                { btnYellow, eColor.Yellow },
-                { btnOrange, eColor.Orange },
-                { btnPurple, eColor.Purple },
-                { btnLightBlue, eColor.LightBlue },
-                { btnPink, eColor.Pink }
-            };
+            r_ButtonToColorMap.Add(btnRed, eColor.Red);
+            r_ButtonToColorMap.Add(btnBlue, eColor.Blue);
+            r_ButtonToColorMap.Add(btnGreen, eColor.Green);
+            r_ButtonToColorMap.Add(btnYellow, eColor.Yellow);
+            r_ButtonToColorMap.Add(btnOrange, eColor.Orange);
+            r_ButtonToColorMap.Add(btnPurple, eColor.Purple);
+            r_ButtonToColorMap.Add(btnLightBlue, eColor.LightBlue);
+            r_ButtonToColorMap.Add(btnPink, eColor.Pink);
 
             EnumToColorMap = r_ButtonToColorMap.ToDictionary(pair => pair.Value, pair => pair.Key.BackColor);
         }
@@ -61,7 +55,7 @@ namespace Ex05
         {
             Button clickedButton = sender as Button;
 
-            if (r_ButtonToColorMap.TryGetValue(clickedButton, out eColor chosenColor))
+            if (clickedButton != null && r_ButtonToColorMap.TryGetValue(clickedButton, out eColor chosenColor))
             {
                 SelectedEnumColor = chosenColor;
                 SelectedColor = clickedButton.BackColor;

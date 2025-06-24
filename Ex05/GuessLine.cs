@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ex05
 {
     public partial class GuessLine : UserControl
     {
-        private List<Button> m_GuessButtons = new List<Button>();
-        private List<Button> m_FeedbackButtons = new List<Button>();
+        private readonly List<Button> m_GuessButtons = new List<Button>();
+        private readonly List<Button> m_FeedbackButtons = new List<Button>();
+        private readonly Dictionary<Button, eColor> m_ButtonColors = new Dictionary<Button, eColor>();
         private Button m_SubmitButton;
-        private Dictionary<Button, eColor> m_ButtonColors = new Dictionary<Button, eColor>();
-
 
         public GuessLine()
         {
@@ -26,26 +21,33 @@ namespace Ex05
 
         private void initializeButtonLists()
         {
-            m_GuessButtons.Add(guess1);
-            m_GuessButtons.Add(guess2);
-            m_GuessButtons.Add(guess3);
-            m_GuessButtons.Add(guess4);
+            initializeGuessButtons();
+            initializeFeedbackButtons();
 
-            m_FeedbackButtons.Add(feedbackButton1);
-            m_FeedbackButtons.Add(feedbackButton2);
-            m_FeedbackButtons.Add(feedbackButton3);
-            m_FeedbackButtons.Add(feedbackButton4);
+            m_SubmitButton = buttonSubmit;
+            m_SubmitButton.Enabled = false;
+        }
 
-            m_SubmitButton = submitButton;
+        private void initializeGuessButtons()
+        {
+            m_GuessButtons.Add(btnGuess1);
+            m_GuessButtons.Add(btnGuess2);
+            m_GuessButtons.Add(btnGuess3);
+            m_GuessButtons.Add(btnGuess4);
 
-            // Initialize button colors
             foreach (Button btn in m_GuessButtons)
             {
                 btn.BackColor = Color.LightGray;
                 btn.Enabled = false;
             }
+        }
 
-            m_SubmitButton.Enabled = false;
+        private void initializeFeedbackButtons()
+        {
+            m_FeedbackButtons.Add(buttonFeedback1);
+            m_FeedbackButtons.Add(buttonFeedback2);
+            m_FeedbackButtons.Add(buttonFeedback3);
+            m_FeedbackButtons.Add(buttonFeedback4);
         }
 
         public void ConfigureGuessButtons(int i_RowIndex, EventHandler i_ClickHandler)
@@ -78,6 +80,7 @@ namespace Ex05
             {
                 btn.Enabled = false;
             }
+
             m_SubmitButton.Enabled = false;
         }
 
@@ -85,43 +88,17 @@ namespace Ex05
         {
             if (m_GuessButtons.Contains(i_Button))
             {
-                // Update or add the color mapping for this button
-                if (m_ButtonColors.ContainsKey(i_Button))
-                {
-                    m_ButtonColors[i_Button] = i_Color;
-                }
-                else
-                {
-                    m_ButtonColors.Add(i_Button, i_Color);
-                }
+                m_ButtonColors[i_Button] = i_Color;
             }
-        }
-
-        public eColor? GetColorForButton(Button i_Button)
-        {
-            if (m_ButtonColors.ContainsKey(i_Button))
-            {
-                return m_ButtonColors[i_Button];
-            }
-
-            return null;
-        }
-
-        public bool ContainsColor(eColor i_Color)
-        {
-            return m_ButtonColors.Values.Contains(i_Color);
         }
 
         public bool HasDuplicateColors()
         {
-            // Check if there are any duplicate colors in the row
-            var colorValues = m_ButtonColors.Values.ToList();
-            return colorValues.Count != colorValues.Distinct().Count();
+            return m_ButtonColors.Values.Count() != m_ButtonColors.Values.Distinct().Count();
         }
 
         public bool IsRowFilled()
         {
-            // All buttons must have a color assigned
             return m_ButtonColors.Count == m_GuessButtons.Count;
         }
 
@@ -131,9 +108,9 @@ namespace Ex05
 
             foreach (Button btn in m_GuessButtons)
             {
-                if (m_ButtonColors.ContainsKey(btn))
+                if (m_ButtonColors.TryGetValue(btn, out eColor color))
                 {
-                    colors.Add(m_ButtonColors[btn]);
+                    colors.Add(color);
                 }
             }
 
@@ -144,24 +121,14 @@ namespace Ex05
         {
             int index = 0;
 
-            // Set black buttons for bulls (direct hits)
-            for (int i = 0; i < i_Bulls; i++)
+            for (int i = 0; i < i_Bulls && index < m_FeedbackButtons.Count; i++, index++)
             {
-                if (index < m_FeedbackButtons.Count)
-                {
-                    m_FeedbackButtons[index].BackColor = Color.Black;
-                    index++;
-                }
+                m_FeedbackButtons[index].BackColor = GameSettings.HitColor;
             }
 
-            // Set yellow buttons for cows (indirect hits)
-            for (int i = 0; i < i_Cows; i++)
+            for (int i = 0; i < i_Cows && index < m_FeedbackButtons.Count; i++, index++)
             {
-                if (index < m_FeedbackButtons.Count)
-                {
-                    m_FeedbackButtons[index].BackColor = Color.Yellow;
-                    index++;
-                }
+                m_FeedbackButtons[index].BackColor = GameSettings.BlowColor;
             }
         }
     }

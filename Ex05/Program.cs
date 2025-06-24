@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-
 
 namespace Ex05
 {
-    internal class Program
+    internal static class Program
     {
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -28,66 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.secretButton1 = new System.Windows.Forms.Button();
-            this.secretButton2 = new System.Windows.Forms.Button();
-            this.secretButton3 = new System.Windows.Forms.Button();
-            this.secretButton4 = new System.Windows.Forms.Button();
+            this.btnSecretCode1 = new System.Windows.Forms.Button();
+            this.btnSecretCode2 = new System.Windows.Forms.Button();
+            this.btnSecretCode3 = new System.Windows.Forms.Button();
+            this.btnSecretCode4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // secretButton1
+            // btnSecretCode1
             // 
-            this.secretButton1.BackColor = System.Drawing.SystemColors.ControlText;
-            this.secretButton1.Enabled = false;
-            this.secretButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.secretButton1.Location = new System.Drawing.Point(12, 12);
-            this.secretButton1.Name = "secretButton1";
-            this.secretButton1.Size = new System.Drawing.Size(40, 40);
-            this.secretButton1.TabIndex = 0;
-            this.secretButton1.UseVisualStyleBackColor = false;
+            this.btnSecretCode1.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnSecretCode1.Enabled = false;
+            this.btnSecretCode1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecretCode1.Location = new System.Drawing.Point(16, 15);
+            this.btnSecretCode1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode1.Name = "btnSecretCode1";
+            this.btnSecretCode1.Size = new System.Drawing.Size(53, 49);
+            this.btnSecretCode1.TabIndex = 0;
+            this.btnSecretCode1.UseVisualStyleBackColor = false;
             // 
-            // secretButton2
+            // btnSecretCode2
             // 
-            this.secretButton2.BackColor = System.Drawing.SystemColors.ControlText;
-            this.secretButton2.Enabled = false;
-            this.secretButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.secretButton2.Location = new System.Drawing.Point(58, 12);
-            this.secretButton2.Name = "secretButton2";
-            this.secretButton2.Size = new System.Drawing.Size(40, 40);
-            this.secretButton2.TabIndex = 0;
-            this.secretButton2.UseVisualStyleBackColor = false;
+            this.btnSecretCode2.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnSecretCode2.Enabled = false;
+            this.btnSecretCode2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecretCode2.Location = new System.Drawing.Point(77, 15);
+            this.btnSecretCode2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode2.Name = "btnSecretCode2";
+            this.btnSecretCode2.Size = new System.Drawing.Size(53, 49);
+            this.btnSecretCode2.TabIndex = 0;
+            this.btnSecretCode2.UseVisualStyleBackColor = false;
             // 
-            // secretButton3
+            // btnSecretCode3
             // 
-            this.secretButton3.BackColor = System.Drawing.SystemColors.ControlText;
-            this.secretButton3.Enabled = false;
-            this.secretButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.secretButton3.Location = new System.Drawing.Point(104, 12);
-            this.secretButton3.Name = "secretButton3";
-            this.secretButton3.Size = new System.Drawing.Size(40, 40);
-            this.secretButton3.TabIndex = 0;
-            this.secretButton3.UseVisualStyleBackColor = false;
+            this.btnSecretCode3.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnSecretCode3.Enabled = false;
+            this.btnSecretCode3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecretCode3.Location = new System.Drawing.Point(139, 15);
+            this.btnSecretCode3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode3.Name = "btnSecretCode3";
+            this.btnSecretCode3.Size = new System.Drawing.Size(53, 49);
+            this.btnSecretCode3.TabIndex = 0;
+            this.btnSecretCode3.UseVisualStyleBackColor = false;
             // 
-            // secretButton4
+            // btnSecretCode4
             // 
-            this.secretButton4.BackColor = System.Drawing.SystemColors.ControlText;
-            this.secretButton4.Enabled = false;
-            this.secretButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.secretButton4.Location = new System.Drawing.Point(150, 12);
-            this.secretButton4.Name = "secretButton4";
-            this.secretButton4.Size = new System.Drawing.Size(40, 40);
-            this.secretButton4.TabIndex = 0;
-            this.secretButton4.UseVisualStyleBackColor = false;
+            this.btnSecretCode4.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnSecretCode4.Enabled = false;
+            this.btnSecretCode4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecretCode4.Location = new System.Drawing.Point(200, 15);
+            this.btnSecretCode4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode4.Name = "btnSecretCode4";
+            this.btnSecretCode4.Size = new System.Drawing.Size(53, 49);
+            this.btnSecretCode4.TabIndex = 0;
+            this.btnSecretCode4.UseVisualStyleBackColor = false;
             // 
             // GameBoardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 366);
-            this.Controls.Add(this.secretButton4);
-            this.Controls.Add(this.secretButton3);
-            this.Controls.Add(this.secretButton2);
-            this.Controls.Add(this.secretButton1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(405, 450);
+            this.Controls.Add(this.btnSecretCode4);
+            this.Controls.Add(this.btnSecretCode3);
+            this.Controls.Add(this.btnSecretCode2);
+            this.Controls.Add(this.btnSecretCode1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GameBoardForm";
             this.Text = "GameBoardForm";
             this.ResumeLayout(false);
@@ -96,9 +100,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button secretButton1;
-        private System.Windows.Forms.Button secretButton2;
-        private System.Windows.Forms.Button secretButton3;
-        private System.Windows.Forms.Button secretButton4;
+        private System.Windows.Forms.Button btnSecretCode1;
+        private System.Windows.Forms.Button btnSecretCode2;
+        private System.Windows.Forms.Button btnSecretCode3;
+        private System.Windows.Forms.Button btnSecretCode4;
     }
 }

@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ex05
 {
     public partial class StartForm : Form
     {
-        private int m_NumOfGuesses = 4;
+        private int m_NumOfGuesses = GameSettings.MinGuesses;
+
         public StartForm()
         {
             InitializeComponent();
@@ -29,22 +23,24 @@ namespace Ex05
         {
             GameBoardForm mainForm = new GameBoardForm(m_NumOfGuesses);
             mainForm.StartPosition = FormStartPosition.CenterScreen;
-
-            mainForm.FormClosed += (s, args) =>
-                {
-                    Application.Exit();
-                };
+            mainForm.FormClosed += MainForm_FormClosed;
 
             mainForm.Show();
             this.Hide();
         }
 
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void btnCounter_Click(object sender, EventArgs e)
         {
             m_NumOfGuesses++;
-            if (m_NumOfGuesses > 10)
+
+            if (m_NumOfGuesses > GameSettings.MaxGuesses)
             {
-                m_NumOfGuesses = 4;
+                m_NumOfGuesses = GameSettings.MinGuesses;
             }
 
             btnCounter.Text = $"Number of guesses: {m_NumOfGuesses}";
