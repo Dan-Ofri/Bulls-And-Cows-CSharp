@@ -40,7 +40,7 @@
             this.btnSecretCode1.Enabled = false;
             this.btnSecretCode1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecretCode1.Location = new System.Drawing.Point(16, 15);
-            this.btnSecretCode1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode1.Margin = new System.Windows.Forms.Padding(4);
             this.btnSecretCode1.Name = "btnSecretCode1";
             this.btnSecretCode1.Size = new System.Drawing.Size(53, 49);
             this.btnSecretCode1.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.btnSecretCode2.Enabled = false;
             this.btnSecretCode2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecretCode2.Location = new System.Drawing.Point(77, 15);
-            this.btnSecretCode2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode2.Margin = new System.Windows.Forms.Padding(4);
             this.btnSecretCode2.Name = "btnSecretCode2";
             this.btnSecretCode2.Size = new System.Drawing.Size(53, 49);
             this.btnSecretCode2.TabIndex = 0;
@@ -64,7 +64,7 @@
             this.btnSecretCode3.Enabled = false;
             this.btnSecretCode3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecretCode3.Location = new System.Drawing.Point(139, 15);
-            this.btnSecretCode3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode3.Margin = new System.Windows.Forms.Padding(4);
             this.btnSecretCode3.Name = "btnSecretCode3";
             this.btnSecretCode3.Size = new System.Drawing.Size(53, 49);
             this.btnSecretCode3.TabIndex = 0;
@@ -76,7 +76,7 @@
             this.btnSecretCode4.Enabled = false;
             this.btnSecretCode4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecretCode4.Location = new System.Drawing.Point(200, 15);
-            this.btnSecretCode4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecretCode4.Margin = new System.Windows.Forms.Padding(4);
             this.btnSecretCode4.Name = "btnSecretCode4";
             this.btnSecretCode4.Size = new System.Drawing.Size(53, 49);
             this.btnSecretCode4.TabIndex = 0;
@@ -92,8 +92,10 @@
             this.Controls.Add(this.btnSecretCode2);
             this.Controls.Add(this.btnSecretCode1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GameBoardForm";
-            this.Text = "GameBoardForm";
+            this.Text = "Bool Pgia";
             this.ResumeLayout(false);
 
         }

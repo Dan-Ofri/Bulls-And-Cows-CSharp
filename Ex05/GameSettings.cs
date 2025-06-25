@@ -4,6 +4,6 @@
     {
         public const int k_CodeLength = 4;
         public const int k_MinGuesses = 4;
-        public const int K_MaxGuesses = 10;
+        public const int k_MaxGuesses = 10;
     }
 }

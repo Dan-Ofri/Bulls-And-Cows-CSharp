@@ -7,12 +7,7 @@ namespace Ex05
     public class GameLogic
     {
         private readonly Random r_Random = new Random();
-        private readonly List<eColor> r_AllowedColors;
-
-        public GameLogic()
-        {
-            r_AllowedColors = Enum.GetValues(typeof(eColor)).Cast<eColor>().ToList();
-        }
+        private readonly List<eColor> r_AllowedColors = Enum.GetValues(typeof(eColor)).Cast<eColor>().ToList();
 
         public List<eColor> GenerateSecretCode()
         {

@@ -38,7 +38,7 @@ namespace Ex05
         {
             m_NumOfGuesses++;
 
-            if (m_NumOfGuesses > GameSettings.K_MaxGuesses)
+            if (m_NumOfGuesses > GameSettings.k_MaxGuesses)
             {
                 m_NumOfGuesses = GameSettings.k_MinGuesses;
             }

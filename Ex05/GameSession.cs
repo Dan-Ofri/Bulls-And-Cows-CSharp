@@ -6,10 +6,10 @@ namespace Ex05
     {
         private Board Board { get; set; }
 
-        public List<eColor> SecretCode { get; set; }
+        public List<eColor> SecretCode { get; private set; }
         private int CurrentGuessNumber { get; set; }
 
-        public eGameState State { get; set; } = eGameState.InProgress;
+        public eGameState State { get; private set; } = eGameState.InProgress;
 
         private GameLogic m_Logic;
 
