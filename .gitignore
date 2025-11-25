@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Release package files (for GitHub Releases)
+Release-Package/
+*.zip

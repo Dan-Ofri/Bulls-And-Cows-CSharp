@@ -9,6 +9,8 @@
 
 **A classic code-breaking game built with C# and Windows Forms**
 
+[![Download Latest Release](https://img.shields.io/github/v/release/Dan-Ofri/Bulls-And-Cows-CSharp?label=Download&style=for-the-badge&color=success)](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases/latest)
+
 [Features](#-features) • [Installation](#-installation) • [How to Play](#-how-to-play) • [Architecture](#-architecture)
 
 </div>
@@ -55,12 +57,44 @@ Bulls and Cows (also known as **Mastermind**) is a classic code-breaking game wh
 
 ## 🚀 Installation
 
-### Prerequisites
+### 📥 Option 1: Download Pre-built Game (Easiest!)
+
+**For Windows Users - No coding required!**
+
+1. Go to **[Releases](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases/latest)**
+2. Download **`BullsAndCows-v1.0-Windows.zip`**
+3. Extract the ZIP file
+4. Double-click **`Ex05.exe`** to play!
+
+**Requirements:**
+- Windows 7 or later
+- .NET Framework 4.7.2 (pre-installed on Windows 10/11)
+- If game doesn't start: [Download .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
+
+---
+
+### 🛠️ Option 2: Build from Source (For Developers)
+
+#### Prerequisites
 - **Windows OS** (7/8/10/11)
 - **.NET Framework 4.7.2** or higher
 - **Visual Studio 2019+** (for development)
 
-### Quick Start
+#### Method A: Automated Build Script
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp.git
+   cd Bulls-And-Cows-CSharp
+   ```
+
+2. **Build and Run**
+   ```bash
+   build.bat    # Builds the project
+   run.bat      # Runs the game
+   ```
+
+#### Method B: Visual Studio
 
 1. **Clone the repository**
    ```bash
@@ -76,11 +110,7 @@ Bulls and Cows (also known as **Mastermind**) is a classic code-breaking game wh
    - Press `F5` or click **Start**
    - Or build manually: `Build → Build Solution`
 
-### Alternative: Run Pre-built Executable
-```bash
-cd Ex05\bin\Release
-Ex05.exe
-```
+For more details, see **[QUICK_START.md](QUICK_START.md)**
 
 ---
 
