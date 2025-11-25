@@ -76,21 +76,7 @@ In the "About" section (top right):
 - **Website**: Link to your portfolio or LinkedIn
 - **Topics**: (already added in Step 6)
 
-## Optional: Add Screenshots
-
-1. Run the game (`Ex05\bin\Release\Ex05.exe`)
-2. Take screenshots using **Win + Shift + S**
-3. Save them to `docs/screenshots/` with these names:
-   - `start-screen.png`
-   - `gameplay.png`
-   - `win.png`
-   - `color-picker.png`
-4. Commit and push:
-   ```powershell
-   git add docs/screenshots/
-   git commit -m "docs: Add gameplay screenshots"
-   git push
-   ```
+---
 
 ## Troubleshooting
 

@@ -92,11 +92,8 @@ DN_MTA_2025B_Ex05/
 
 ## 🚀 Next Steps
 
-### Immediate (Do Now)
-1. ✅ Take screenshots of the game
-2. ✅ Add them to `docs/screenshots/`
-3. ✅ Create GitHub repository
-4. ✅ Follow `GITHUB_SETUP.md` to upload
+### Immediate (Optional)
+- 📸 Add screenshots to `docs/screenshots/` folder (optional for future enhancement)
 
 ### Optional Improvements
 - 📸 Add GIF demo in README (use ScreenToGif)

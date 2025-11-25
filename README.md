@@ -9,7 +9,7 @@
 
 **A classic code-breaking game built with C# and Windows Forms**
 
-[Features](#-features) • [Installation](#-installation) • [How to Play](#-how-to-play) • [Architecture](#-architecture) • [Screenshots](#-screenshots)
+[Features](#-features) • [Installation](#-installation) • [How to Play](#-how-to-play) • [Architecture](#-architecture)
 
 </div>
 
@@ -88,14 +88,10 @@ Ex05.exe
 ## 🎮 How to Play
 
 ### 1️⃣ Start the Game
-<img src="docs/screenshots/start-screen.png" alt="Start Screen" width="400"/>
-
 - Choose number of guessing rounds (4-10)
 - Click **Start** to begin
 
 ### 2️⃣ Make Your Guess
-<img src="docs/screenshots/gameplay.png" alt="Gameplay" width="600"/>
-
 - Click on a **button** to select a color
 - Choose from the **color picker** dialog
 - Each row represents one guess
@@ -187,22 +183,6 @@ public class GuessLine : UserControl
 - **Observer Pattern** - Event handling
 - **Composite Pattern** - UI component hierarchy
 - **Strategy Pattern** - Feedback calculation
-
----
-
-## 🎨 Screenshots
-
-### Start Screen
-![Start Screen](docs/screenshots/start-screen.png)
-
-### Active Gameplay
-![Gameplay](docs/screenshots/gameplay.png)
-
-### Win Screen
-![Win](docs/screenshots/win.png)
-
-### Color Picker
-![Color Picker](docs/screenshots/color-picker.png)
 
 ---
 
