@@ -53,9 +53,7 @@ namespace Ex05
 
         private void colorButton_Click(object sender, EventArgs e)
         {
-            Button clickedButton = sender as Button;
-
-            if (clickedButton != null && r_ButtonToColorMap.TryGetValue(clickedButton, out eColor chosenColor))
+            if (sender is Button clickedButton && r_ButtonToColorMap.TryGetValue(clickedButton, out eColor chosenColor))
             {
                 SelectedEnumColor = chosenColor;
                 SelectedColor = clickedButton.BackColor;

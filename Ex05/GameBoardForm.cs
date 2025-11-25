@@ -145,8 +145,7 @@ namespace Ex05
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            if (btn == null)
+            if (!(sender is Button btn))
             {
                 return;
             }
@@ -158,15 +157,18 @@ namespace Ex05
             currentGuessLine.DisplayFeedback(feedback.Hits, feedback.Blows);
             currentGuessLine.DisableAllButtons();
 
-            if (r_Session.State == eGameState.Won ||
-                r_Session.State == eGameState.Lost)
+            switch(r_Session.State)
             {
-                revealSecret();
-            }
-            else if (r_Session.State == eGameState.InProgress)
-            {
-                m_CurrentGuessLineIndex++;
-                configureGuessLine(m_CurrentGuessLineIndex);
+                case eGameState.Won:
+                case eGameState.Lost:
+                    revealSecret();
+                    break;
+                case eGameState.InProgress:
+                    m_CurrentGuessLineIndex++;
+                    configureGuessLine(m_CurrentGuessLineIndex);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
