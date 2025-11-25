@@ -276,6 +276,7 @@ of this software and associated documentation files...
 
 **Dan Ofri**
 - GitHub: [@Dan-Ofri](https://github.com/Dan-Ofri)
+- Email: [ofridan@gmail.com](mailto:ofridan@gmail.com)
 - Portfolio: [More Projects](https://github.com/Dan-Ofri?tab=repositories)
 
 ---
@@ -293,7 +294,7 @@ of this software and associated documentation files...
 Have questions or suggestions? Feel free to:
 - 🐛 [Open an issue](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/issues)
 - 💬 [Start a discussion](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/discussions)
-- 📧 Email me directly
+- 📧 Email: [ofridan@gmail.com](mailto:ofridan@gmail.com)
 
 ---
 
