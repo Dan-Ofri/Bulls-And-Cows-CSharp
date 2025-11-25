@@ -66,6 +66,18 @@ Bulls and Cows (also known as **Mastermind**) is a classic code-breaking game wh
 3. Extract the ZIP file
 4. Double-click **`Ex05.exe`** to play!
 
+**⚠️ Windows SmartScreen Warning:**
+When you run the game, Windows will show **"Windows protected your PC"**.
+
+This is normal! The app isn't digitally signed (signing costs $$$ yearly).
+
+**To bypass:**
+1. Click **"More info"** on the blue screen
+2. Click **"Run anyway"**
+3. Game starts!
+
+✅ **The app is completely safe** - all source code is public and reviewable on this repository.
+
 **Requirements:**
 - Windows 7 or later
 - .NET Framework 4.7.2 (pre-installed on Windows 10/11)

@@ -16,8 +16,17 @@
    - **That's it!** The game should start immediately
 
 3. **If Windows SmartScreen appears:**
-   - Click "More info" → "Run anyway"
-   - (This happens because the app isn't digitally signed)
+   
+   **"Windows protected your PC" screen will appear** - This is normal!
+   
+   **Why?** The app isn't digitally signed (signing costs $$$)
+   
+   **How to run:**
+   1. Click **"More info"** (small text link)
+   2. Click **"Run anyway"** button that appears
+   3. Game will start!
+   
+   **Is it safe?** Yes! The code is open-source on GitHub. You can review it yourself.
 
 ### Requirements
 - **Windows 7 or later**
@@ -105,9 +114,25 @@ Bulls and Cows is a classic code-breaking game (like Mastermind):
 ### "The application was unable to start correctly"
 **Solution**: Install [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
 
-### "Windows protected your PC"
-**Solution**: Click "More info" → "Run anyway"  
-(The app is safe - it's just not digitally signed)
+### "Windows protected your PC" (SmartScreen)
+**This is completely normal!** The app isn't digitally signed.
+
+**Solution:**
+1. On the blue SmartScreen window, click **"More info"**
+2. A new button appears: **"Run anyway"**
+3. Click **"Run anyway"**
+4. The game will start!
+
+**Why does this happen?**
+- Digital code signing certificates cost $300-500/year
+- This is a free, open-source educational project
+- The code is publicly available on GitHub - you can verify it's safe
+
+**Is it really safe?**
+- ✅ Yes! No viruses, no malware
+- ✅ Source code is open and reviewable
+- ✅ Built with Visual Studio 2022
+- ✅ Same protection appears for many indie/educational apps
 
 ### Build Errors
 **Solution**: 

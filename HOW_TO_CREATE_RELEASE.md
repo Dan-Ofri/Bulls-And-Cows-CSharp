@@ -155,6 +155,17 @@ A fully playable Windows desktop game featuring:
 Download `BullsAndCows-v1.0-Windows.zip` below and extract it.  
 Double-click `Ex05.exe` to play!
 
+### ⚠️ Windows SmartScreen Warning
+**You'll see "Windows protected your PC" when running the game.**
+
+This is normal! The app isn't digitally signed (costs $$$).
+
+**To run the game:**
+1. Click **"More info"**
+2. Click **"Run anyway"**
+
+The app is completely safe - all source code is public on this repository!
+
 ## ⚙️ Requirements
 
 - **Windows 7 or later**
