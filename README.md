@@ -69,9 +69,8 @@ Bulls and Cows (also known as **Mastermind**) is a classic code-breaking game wh
    ```
 
 2. **Open in Visual Studio**
-   ```bash
-   start "Ex05 Dan 322527227 Tair 212096234.sln"
-   ```
+   - Double-click the `.sln` file in the project root
+   - Or from command line: `start *.sln`
 
 3. **Build and Run**
    - Press `F5` or click **Start**
@@ -277,17 +276,15 @@ of this software and associated documentation files...
 
 **Dan Ofri**
 - GitHub: [@Dan-Ofri](https://github.com/Dan-Ofri)
-- LinkedIn: [Dan Ofri](https://linkedin.com/in/dan-ofri) *(update with your actual link)*
-- Email: your.email@example.com *(update with your email)*
+- Portfolio: [More Projects](https://github.com/Dan-Ofri?tab=repositories)
 
 ---
 
 ## 🙏 Acknowledgments
 
 - **Course**: Object-Oriented Programming in .NET & C#
-- **Academic Year**: 2025B, Semester 2
-- **Institution**: *(Add your university name)*
-- **Inspiration**: Classic Mastermind board game
+- **Academic Project**: Year 2, Semester B (2025)
+- **Inspiration**: Classic Mastermind board game by Mordecai Meirowitz
 
 ---
 
