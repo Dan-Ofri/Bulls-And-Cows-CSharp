@@ -20,7 +20,7 @@ if not exist %MSBUILD% (
 
 REM Build the solution
 echo Building solution...
-%MSBUILD% "Ex05 Dan 322527227 Tair 212096234.sln" /p:Configuration=Release /p:Platform="Any CPU" /v:minimal /nologo
+%MSBUILD% "BullsAndCows.sln" /p:Configuration=Release /p:Platform="Any CPU" /v:minimal /nologo
 
 if %ERRORLEVEL% neq 0 (
     echo.

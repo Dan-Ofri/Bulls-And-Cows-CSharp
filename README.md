@@ -191,8 +191,8 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 👨‍💻 Authors
 
-**Dan Ofri** (322527227)  
-**Tair Mazrahi** (212096234)
+**Dan Ofri**  
+**Tair Mazrahi**
 
 - GitHub: [@Dan-Ofri](https://github.com/Dan-Ofri)
 - Email: ofridan@gmail.com

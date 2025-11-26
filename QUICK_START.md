@@ -51,7 +51,7 @@ run.bat
 
 ```batch
 # Open solution
-Ex05 Dan 322527227 Tair 212096234.sln
+BullsAndCows.sln
 
 # Press F5 to build and run
 ```
@@ -117,17 +117,17 @@ Ex05/
 
 **Release Build:**
 ```batch
-MSBuild "Ex05 Dan 322527227 Tair 212096234.sln" /p:Configuration=Release
+MSBuild "BullsAndCows.sln" /p:Configuration=Release
 ```
 
 **Debug Build:**
 ```batch
-MSBuild "Ex05 Dan 322527227 Tair 212096234.sln" /p:Configuration=Debug
+MSBuild "BullsAndCows.sln" /p:Configuration=Debug
 ```
 
 **Clean Build:**
 ```batch
-MSBuild "Ex05 Dan 322527227 Tair 212096234.sln" /t:Clean,Build
+MSBuild "BullsAndCows.sln" /t:Clean,Build
 ```
 
 ---
