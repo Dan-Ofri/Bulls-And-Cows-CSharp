@@ -95,7 +95,7 @@ run.bat    # Runs the game
 
 ### Project Structure
 ```
-Ex05/
+src/
 ├── UI Components
 │   ├── FormBullsAndCows.cs    # Main game window
 │   ├── FormSettings.cs        # Difficulty settings
@@ -191,10 +191,8 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 👨‍💻 Authors
 
-**Dan Ofri**  
-**Tair Mazrahi**
+Developed by **[Dan Ofri](https://github.com/Dan-Ofri)** and **[Tair Saida](https://github.com/tair-saida)**
 
-- GitHub: [@Dan-Ofri](https://github.com/Dan-Ofri)
 - Email: ofridan@gmail.com
 
 ---

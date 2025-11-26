@@ -36,7 +36,7 @@ echo ========================================
 echo BUILD SUCCESS!
 echo ========================================
 echo.
-echo Executable created at: Ex05\bin\Release\Ex05.exe
+echo Executable created at: src\bin\Release\Ex05.exe
 echo.
 
 pause

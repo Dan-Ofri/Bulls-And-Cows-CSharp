@@ -103,7 +103,7 @@ BullsAndCows.sln
 ## 📁 Project Structure
 
 ```
-Ex05/
+src/
 ├── FormBullsAndCows.cs    # Main game
 ├── FormSettings.cs        # Difficulty select
 ├── GuessLine.cs           # Guess row UI

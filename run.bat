@@ -8,18 +8,18 @@ echo ========================================
 echo.
 
 REM Check if Release build exists
-if exist "Ex05\bin\Release\Ex05.exe" (
+if exist "src\bin\Release\Ex05.exe" (
     echo Starting game from Release build...
     echo.
-    start "" "Ex05\bin\Release\Ex05.exe"
+    start "" "src\bin\Release\Ex05.exe"
     exit /b 0
 )
 
 REM Check if Debug build exists
-if exist "Ex05\bin\Debug\Ex05.exe" (
+if exist "src\bin\Debug\Ex05.exe" (
     echo Starting game from Debug build...
     echo.
-    start "" "Ex05\bin\Debug\Ex05.exe"
+    start "" "src\bin\Debug\Ex05.exe"
     exit /b 0
 )
 
