@@ -1,152 +1,93 @@
 # 🎯 Bulls and Cows - Mastermind Game
 
-<div align="center">
-
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![.NET Framework](https://img.shields.io/badge/.NET_Framework-512BD4?style=for-the-badge&logo=.net&logoColor=white)
 ![Windows Forms](https://img.shields.io/badge/Windows_Forms-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**A classic code-breaking game built with C# and Windows Forms**
+**Classic code-breaking game built with C# Windows Forms**
 
-[![Download Latest Release](https://img.shields.io/github/v/release/Dan-Ofri/Bulls-And-Cows-CSharp?label=Download&style=for-the-badge&color=success)](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases/latest)
+[![Download](https://img.shields.io/github/v/release/Dan-Ofri/Bulls-And-Cows-CSharp?label=Download&style=for-the-badge&color=success)](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases/latest)
 
-[Features](#-features) • [Installation](#-installation) • [How to Play](#-how-to-play) • [Architecture](#-architecture)
-
-</div>
+📖 **Quick Guide:** See [QUICK_START.md](QUICK_START.md)
 
 ---
 
 ## 📖 About
 
-Bulls and Cows (also known as **Mastermind**) is a classic code-breaking game where you need to guess a secret color combination. This implementation is built using **C# Windows Forms**, featuring a clean UI, customizable difficulty, and intelligent feedback system.
+Bulls and Cows (Mastermind) is a code-breaking game where you guess a secret color combination. Built with **C# Windows Forms**, featuring clean UI, customizable difficulty, and intelligent feedback.
 
 ### 🎮 Game Rules
-
-- The computer generates a secret code of **4 unique colors**
-- You have **up to 10 attempts** to guess the code
-- After each guess, you receive feedback:
-  - **Bulls (V)**: Correct color in the correct position
-  - **Cows (X)**: Correct color in the wrong position
-- Win by guessing the exact code before running out of attempts!
+- Computer generates **4 unique colors**
+- **Up to 10 attempts** to guess
+- Feedback after each guess:
+  - **Bulls (V)**: Correct color, correct position
+  - **Cows (X)**: Correct color, wrong position
+- Win by guessing the code!
 
 ---
 
 ## ✨ Features
 
-### 🎨 Core Gameplay
-- **8 vibrant colors** to choose from: Red, Blue, Green, Yellow, Orange, Purple, Light Blue, Pink
-- **Intelligent feedback system** with Bulls & Cows indicators
-- **Customizable difficulty** - choose 4-10 guessing rounds
-- **Real-time validation** - prevent duplicate colors in a single guess
+**Gameplay:**
+- 8 vibrant colors: Red, Blue, Green, Yellow, Orange, Purple, Light Blue, Pink
+- Intelligent Bulls & Cows feedback
+- Customizable difficulty (4-10 rounds)
+- Real-time duplicate prevention
 
-### 💻 Technical Highlights
-- **Object-Oriented Design** - clean separation of concerns
-- **MVC-inspired architecture** - GameLogic, GameSession, UI components
-- **Custom UI components** - reusable GuessLine controls
-- **Enum-based color system** - type-safe color handling
-- **Event-driven programming** - responsive user interactions
-
-### 🛠️ Engineering Features
-- **Modular codebase** - easy to extend and maintain
-- **Clean code principles** - readable and well-documented
-- **Resource management** - proper disposal of UI resources
-- **Error handling** - graceful handling of edge cases
+**Technical:**
+- Object-Oriented Design with MVC architecture
+- Custom UI components (GuessLine controls)
+- Enum-based type-safe color system
+- Event-driven responsive UI
+- Clean code with proper resource management
 
 ---
 
-## 🚀 Installation
+## 🚀 Quick Start
 
-### 📥 Option 1: Download Pre-built Game (Easiest!)
+### Option 1: Download & Play
+1. Get [latest release](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases/latest)
+2. Extract ZIP
+3. Run `Ex05.exe`
 
-**For Windows Users - No coding required!**
+**Windows SmartScreen?** Click "More info" → "Run anyway" (app not digitally signed)
 
-1. Go to **[Releases](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases/latest)**
-2. Download **`BullsAndCows-v1.0-Windows.zip`**
-3. Extract the ZIP file
-4. Double-click **`Ex05.exe`** to play!
+**Requirements:** Windows 7+, .NET Framework 4.7.2
 
-**⚠️ Windows SmartScreen Warning:**
-When you run the game, Windows will show **"Windows protected your PC"**.
+### Option 2: Build from Source
 
-This is normal! The app isn't digitally signed (signing costs $$$ yearly).
+**Prerequisites:** Visual Studio 2019+, .NET Framework 4.7.2
 
-**To bypass:**
-1. Click **"More info"** on the blue screen
-2. Click **"Run anyway"**
-3. Game starts!
+**Using Scripts:**
+```batch
+git clone https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp.git
+cd Bulls-And-Cows-CSharp
+build.bat  # Builds the project
+run.bat    # Runs the game
+```
 
-✅ **The app is completely safe** - all source code is public and reviewable on this repository.
-
-**Requirements:**
-- Windows 7 or later
-- .NET Framework 4.7.2 (pre-installed on Windows 10/11)
-- If game doesn't start: [Download .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
-
----
-
-### 🛠️ Option 2: Build from Source (For Developers)
-
-#### Prerequisites
-- **Windows OS** (7/8/10/11)
-- **.NET Framework 4.7.2** or higher
-- **Visual Studio 2019+** (for development)
-
-#### Method A: Automated Build Script
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp.git
-   cd Bulls-And-Cows-CSharp
-   ```
-
-2. **Build and Run**
-   ```bash
-   build.bat    # Builds the project
-   run.bat      # Runs the game
-   ```
-
-#### Method B: Visual Studio
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp.git
-   cd Bulls-And-Cows-CSharp
-   ```
-
-2. **Open in Visual Studio**
-   - Double-click the `.sln` file in the project root
-   - Or from command line: `start *.sln`
-
-3. **Build and Run**
-   - Press `F5` or click **Start**
-   - Or build manually: `Build → Build Solution`
-
-For more details, see **[QUICK_START.md](QUICK_START.md)**
+**Using Visual Studio:**
+- Open `.sln` file
+- Press `F5` to build and run
 
 ---
 
 ## 🎮 How to Play
 
-### 1️⃣ Start the Game
-- Choose number of guessing rounds (4-10)
-- Click **Start** to begin
+### Setup
+1. Launch game
+2. Choose number of rounds (4-10)
+3. Click "Start Game"
 
-### 2️⃣ Make Your Guess
-- Click on a **button** to select a color
-- Choose from the **color picker** dialog
-- Each row represents one guess
-- Colors must be unique within a row
-
-### 3️⃣ Analyze Feedback
-- **V (Bulls)**: ✅ Right color, right position
-- **X (Cows)**: ⚠️ Right color, wrong position
-- Empty: ❌ Color not in the code
-
-### 4️⃣ Win or Lose
-- **Win**: Guess all colors correctly (4 Bulls)
-- **Lose**: Run out of attempts
-- New game starts automatically after each round
+### Gameplay
+1. **Select colors** - Click on buttons to choose 4 unique colors
+2. **Make guess** - Click arrow to submit
+3. **Review feedback**:
+   - **V** (Bulls) = Correct color + position
+   - **X** (Cows) = Correct color, wrong position
+4. **Adjust strategy** - Use feedback to narrow down options
+5. **Win** - Match all 4 colors in correct positions!
 
 ---
 
@@ -155,194 +96,120 @@ For more details, see **[QUICK_START.md](QUICK_START.md)**
 ### Project Structure
 ```
 Ex05/
-├── Core Logic
-│   ├── GameLogic.cs          # Game rules & feedback calculation
-│   ├── GameSession.cs        # Session management
-│   ├── Board.cs              # Game state tracking
-│   └── Feedback.cs           # Feedback data structure
-│
 ├── UI Components
-│   ├── StartForm.cs          # Initial setup screen
-│   ├── GameBoardForm.cs      # Main game interface
-│   ├── ColorPickerForm.cs    # Color selection dialog
-│   └── GuessLine.cs          # Reusable guess row control
+│   ├── FormBullsAndCows.cs    # Main game window
+│   ├── FormSettings.cs        # Difficulty settings
+│   ├── GuessLine.cs           # Reusable guess row
+│   ├── ColorButton.cs         # Custom color button
+│   └── ColorPicker.cs         # Color selection panel
 │
-├── Configuration
-│   ├── GameSettings.cs       # Global constants
-│   ├── eColor.cs             # Color enumeration
-│   └── eGameState.cs         # Game state enumeration
+├── Game Logic
+│   ├── GameLogic.cs           # Core game rules
+│   ├── GameSession.cs         # Game state management
+│   ├── eColor.cs              # Color enumeration
+│   └── ColorUtils.cs          # Helper functions
 │
-└── Entry Point
-    └── Program.cs            # Application entry
+└── Resources
+    └── Images/                # UI assets
 ```
 
-### Key Classes
+### Class Responsibilities
 
-#### `GameLogic` - Core Algorithm
+**GameLogic** - Core game engine
+- Generate secret code
+- Validate guesses
+- Calculate Bulls & Cows
+
+**GameSession** - State management
+- Track current round
+- Store guess history
+- Handle win/loss conditions
+
+**GuessLine** - UI component
+- Display color selections
+- Show feedback indicators
+- Handle user interactions
+
+### Design Patterns
+
+**MVC Architecture:**
 ```csharp
-public class GameLogic
-{
-    // Generates random secret code
-    public List<eColor> GenerateSecretCode()
-    
-    // Calculates Bulls & Cows
-    public Feedback CalculateFeedback(List<eColor> secretCode, List<eColor> guess)
-    
-    // Checks win condition
-    public bool IsWinningGuess(Feedback feedback)
+// Model
+public class GameLogic {
+    public void CheckGuess(eColor[] guess, out int bulls, out int cows) { }
 }
-```
 
-#### `GameSession` - State Management
-```csharp
-public class GameSession
-{
-    private List<eColor> m_SecretCode;
-    private Board m_Board;
-    private GameLogic m_Logic;
-    
-    public void StartNewGame()
-    public Feedback ProcessGuess(List<eColor> guess)
-    public bool IsGameOver()
+// View
+public class GuessLine : UserControl {
+    public void DisplayFeedback(int bulls, int cows) { }
 }
-```
 
-#### `GuessLine` - Custom UI Control
-```csharp
-public class GuessLine : UserControl
-{
-    public List<Button> ColorButtons { get; }
-    public List<Label> FeedbackLabels { get; }
-    
-    public void SetFeedback(Feedback feedback)
-    public void Lock() // Disable after submission
+// Controller
+public class FormBullsAndCows : Form {
+    private void onGuessSubmitted() {
+        m_GameLogic.CheckGuess(currentGuess, out bulls, out cows);
+        m_GuessLine.DisplayFeedback(bulls, cows);
+    }
 }
-```
-
-### Design Patterns Used
-- **Factory Pattern** - Color generation
-- **Observer Pattern** - Event handling
-- **Composite Pattern** - UI component hierarchy
-- **Strategy Pattern** - Feedback calculation
-
----
-
-## 🧪 Testing
-
-### Manual Testing Checklist
-- ✅ Start game with different round counts (4-10)
-- ✅ Select colors for each position
-- ✅ Verify duplicate color prevention
-- ✅ Check feedback accuracy (Bulls & Cows)
-- ✅ Test win condition (4 Bulls)
-- ✅ Test lose condition (out of attempts)
-- ✅ Verify UI responsiveness
-- ✅ Test edge cases (rapid clicking, form closing)
-
-### Test Cases
-```
-Secret Code: [Red, Blue, Green, Yellow]
-Guess: [Red, Green, Blue, Yellow]
-Expected Feedback: 2 Bulls, 2 Cows ✅
-
-Secret Code: [Purple, Orange, Pink, LightBlue]
-Guess: [Purple, Orange, Pink, LightBlue]
-Expected Feedback: 4 Bulls (WIN!) ✅
 ```
 
 ---
 
 ## 🛠️ Technologies
 
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| **C#** | 8.0+ | Primary language |
-| **.NET Framework** | 4.7.2 | Runtime environment |
-| **Windows Forms** | - | UI framework |
-| **Visual Studio** | 2019+ | IDE |
-| **Git** | - | Version control |
+- **C# 7.3** - Core language
+- **.NET Framework 4.7.2** - Runtime platform
+- **Windows Forms** - UI framework
+- **Visual Studio 2019+** - IDE
 
 ---
 
 ## 📚 Learning Outcomes
 
-This project demonstrates proficiency in:
+**OOP Mastery:**
+- Custom control development
+- Event-driven programming
+- Resource management and disposal
 
-### Programming Concepts
-- ✅ **Object-Oriented Programming** - Classes, inheritance, encapsulation
-- ✅ **Event-Driven Programming** - Event handlers, delegates
-- ✅ **Collections** - Lists, LINQ operations
-- ✅ **Enumerations** - Type-safe constants
+**Software Design:**
+- MVC architecture pattern
+- Separation of concerns
+- Reusable components
 
-### Software Design
-- ✅ **Separation of Concerns** - Logic vs UI
-- ✅ **Code Reusability** - Custom controls, utility methods
-- ✅ **Maintainability** - Clean code, meaningful names
-- ✅ **Scalability** - Easy to add new features
-
-### Windows Forms
-- ✅ **Custom Controls** - UserControl inheritance
-- ✅ **Layout Management** - Dynamic UI generation
-- ✅ **Resource Management** - Proper disposal
-- ✅ **Theming** - Color management, visual consistency
-
----
-
-## 🚀 Future Enhancements
-
-- [ ] **Timer Mode** - Add time pressure for advanced players
-- [ ] **Difficulty Levels** - Easy (5 colors), Medium (6), Hard (8)
-- [ ] **Statistics Tracking** - Win/loss ratio, average attempts
-- [ ] **Sound Effects** - Audio feedback for actions
-- [ ] **Themes** - Dark mode, custom color schemes
-- [ ] **Multiplayer** - Two-player mode (code setter vs guesser)
-- [ ] **Hints System** - Optional hints for struggling players
-- [ ] **Leaderboard** - Local high scores
+**Windows Forms:**
+- Dynamic UI generation
+- User control composition
+- Form lifecycle management
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License - Copyright (c) 2025 Dan Ofri
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files...
-```
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Authors
 
-**Dan Ofri**
+**Dan Ofri** (322527227)  
+**Tair Mazrahi** (212096234)
+
 - GitHub: [@Dan-Ofri](https://github.com/Dan-Ofri)
-- Email: [ofridan@gmail.com](mailto:ofridan@gmail.com)
-- Portfolio: [More Projects](https://github.com/Dan-Ofri?tab=repositories)
+- Email: ofridan@gmail.com
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Course**: Object-Oriented Programming in .NET & C#
-- **Academic Project**: Year 2, Semester B (2025)
-- **Inspiration**: Classic Mastermind board game by Mordecai Meirowitz
-
----
-
-## 📞 Contact & Support
-
-Have questions or suggestions? Feel free to:
-- 🐛 [Open an issue](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/issues)
-- 💬 [Start a discussion](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/discussions)
-- 📧 Email: [ofridan@gmail.com](mailto:ofridan@gmail.com)
+- **Course:** Object-Oriented Programming in C# and .NET
+- **Academic Project:** Year 2, Semester B (2024/2025)
+- **Original Game:** Bulls and Cows / Mastermind
 
 ---
 
 <div align="center">
 
-**⭐ If you found this project helpful, please give it a star!**
+**⭐ If you enjoyed this project, please give it a star!**
 
 Made with ❤️ and C#
 

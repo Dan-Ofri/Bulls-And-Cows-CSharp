@@ -1,177 +1,166 @@
-# 🚀 Quick Start Guide - Bulls and Cows
+# 🚀 Quick Start - Bulls and Cows
 
-**Get started playing in 2 minutes!**
-
-## For Players (Non-Developers)
-
-### Windows Users - Simple Method
-
-1. **Download the Game**
-   - Go to [Releases](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases)
-   - Download `BullsAndCows-v1.0-Windows.zip`
-   - Extract the ZIP file to any folder
-
-2. **Run the Game**
-   - Double-click `Ex05.exe`
-   - **That's it!** The game should start immediately
-
-3. **If Windows SmartScreen appears:**
-   
-   **"Windows protected your PC" screen will appear** - This is normal!
-   
-   **Why?** The app isn't digitally signed (signing costs $$$)
-   
-   **How to run:**
-   1. Click **"More info"** (small text link)
-   2. Click **"Run anyway"** button that appears
-   3. Game will start!
-   
-   **Is it safe?** Yes! The code is open-source on GitHub. You can review it yourself.
-
-### Requirements
-- **Windows 7 or later**
-- **.NET Framework 4.7.2** (usually pre-installed on Windows 10/11)
-- If the game doesn't start, download [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
+**Get playing in 2 minutes!**
 
 ---
 
-## For Developers
+## 🎮 For Players
+
+### Windows - Simple Method
+
+**1. Download:**
+- Go to [Releases](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/releases/latest)
+- Download `BullsAndCows-v1.0-Windows.zip`
+- Extract ZIP
+
+**2. Run:**
+- Double-click `Ex05.exe`
+
+**3. Windows SmartScreen appears?**
+- Click **"More info"**
+- Click **"Run anyway"**
+- This is normal - app isn't digitally signed (safe to run!)
+
+**Requirements:**
+- Windows 7+
+- .NET Framework 4.7.2 (pre-installed on Win10/11)
+- [Download .NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) if needed
+
+---
+
+## 💻 For Developers
 
 ### Prerequisites
-- **Visual Studio 2022** (Community/Professional/Enterprise)
-- **.NET Framework 4.7.2 SDK**
-- **Windows 7 or later**
+- Visual Studio 2019+
+- .NET Framework 4.7.2 SDK
+- Windows 7+
 
-### Method 1: Automated Build (Fastest! ⚡)
+### Method 1: Automated Build ⚡
 
 ```batch
-# Clone the repository
+# Clone
 git clone https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp.git
 cd Bulls-And-Cows-CSharp
 
-# Build the project
+# Build & Run
 build.bat
-
-# Run the game
 run.bat
 ```
 
-**That's it!** The `build.bat` script handles everything automatically.
-
 ### Method 2: Visual Studio
 
-1. **Open the Solution**
-   ```batch
-   # Double-click this file:
-   Ex05 Dan 322527227 Tair 212096234.sln
-   ```
-
-2. **Build and Run**
-   - Press `F5` (Debug) or `Ctrl+F5` (Release)
-   - Or: Right-click solution → Build Solution
-
-### Method 3: Manual Build
-
 ```batch
-# Navigate to project directory
-cd path\to\Bulls-And-Cows-CSharp
+# Open solution
+Ex05 Dan 322527227 Tair 212096234.sln
 
-# Build using MSBuild
-"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" ^
-  "Ex05 Dan 322527227 Tair 212096234.sln" ^
-  /p:Configuration=Release /p:Platform="Any CPU"
-
-# Run the executable
-.\Ex05\bin\Release\Ex05.exe
+# Press F5 to build and run
 ```
 
 ---
 
-## How to Play
+## 🎮 How to Play
 
-### Game Rules
-Bulls and Cows is a classic code-breaking game (like Mastermind):
+**Setup:**
+1. Choose rounds (4-10)
+2. Click "Start Game"
 
-1. **Objective**: Guess the secret 4-color code
-2. **Available Colors**: 8 colors to choose from
-3. **Feedback After Each Guess**:
-   - 🐂 **Bulls**: Correct color in correct position
-   - 🐄 **Cows**: Correct color in wrong position
+**Gameplay:**
+1. Select 4 unique colors
+2. Click arrow to guess
+3. Read feedback:
+   - **V** = Bull (correct color + position)
+   - **X** = Cow (correct color, wrong position)
+4. Adjust and repeat
+5. Win by matching all colors!
 
-### Controls
-- **Left Mouse Click**: Select colors for your guess
-- **Right Mouse Click**: Submit your guess
-- **Number of Guesses**: Choose difficulty (4-10 attempts)
-
-### Winning
-- Match all 4 colors in the correct positions!
-- Try to win in the fewest guesses possible
-
----
-
-## Troubleshooting
-
-### "The application was unable to start correctly"
-**Solution**: Install [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
-
-### "Windows protected your PC" (SmartScreen)
-**This is completely normal!** The app isn't digitally signed.
-
-**Solution:**
-1. On the blue SmartScreen window, click **"More info"**
-2. A new button appears: **"Run anyway"**
-3. Click **"Run anyway"**
-4. The game will start!
-
-**Why does this happen?**
-- Digital code signing certificates cost $300-500/year
-- This is a free, open-source educational project
-- The code is publicly available on GitHub - you can verify it's safe
-
-**Is it really safe?**
-- ✅ Yes! No viruses, no malware
-- ✅ Source code is open and reviewable
-- ✅ Built with Visual Studio 2022
-- ✅ Same protection appears for many indie/educational apps
-
-### Build Errors
-**Solution**: 
-1. Make sure Visual Studio 2022 is installed
-2. Verify .NET Framework 4.7.2 SDK is installed
-3. Run `build.bat` as Administrator
-
-### Game Doesn't Start
-**Solution**:
-1. Check if `Ex05.exe` exists in `Ex05\bin\Release\`
-2. If not, run `build.bat` first
-3. Make sure you have .NET Framework 4.7.2 installed
+**Strategy Tips:**
+- Start with diverse colors
+- Use feedback to eliminate options
+- Track patterns in Bulls/Cows
+- Plan systematic guesses
 
 ---
 
-## What's Next?
+## 🎨 Game Elements
 
-- 📖 Read the full [README.md](README.md) for architecture details
-- 🤝 Want to contribute? See [CONTRIBUTING.md](CONTRIBUTING.md)
-- 🐛 Found a bug? [Open an issue](https://github.com/Dan-Ofri/Bulls-And-Cows-CSharp/issues)
-- ⭐ Like the game? Give us a star on GitHub!
+**Available Colors:**
+- 🔴 Red
+- 🔵 Blue
+- 🟢 Green
+- 🟡 Yellow
+- 🟠 Orange
+- 🟣 Purple
+- 🔷 Light Blue
+- 🌸 Pink
+
+**Feedback:**
+- **V** (Bull) = ✅ Right color, right spot
+- **X** (Cow) = ⚠️ Right color, wrong spot
+- **Blank** = ❌ Color not in code
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
-Bulls-And-Cows-CSharp/
-├── Ex05/                      # Main source code
-│   ├── *.cs                   # C# source files
-│   ├── *.Designer.cs          # Windows Forms designers
-│   ├── *.resx                 # Resource files
-│   └── bin/Release/Ex05.exe   # Compiled game
-├── build.bat                  # Automated build script
-├── run.bat                    # Run the game
-├── README.md                  # Full documentation
-└── QUICK_START.md            # This file
+Ex05/
+├── FormBullsAndCows.cs    # Main game
+├── FormSettings.cs        # Difficulty select
+├── GuessLine.cs           # Guess row UI
+├── GameLogic.cs           # Game engine
+└── GameSession.cs         # State manager
 ```
 
 ---
 
-**Enjoy the game! 🎮**
+## 🔧 Build Options
+
+**Release Build:**
+```batch
+MSBuild "Ex05 Dan 322527227 Tair 212096234.sln" /p:Configuration=Release
+```
+
+**Debug Build:**
+```batch
+MSBuild "Ex05 Dan 322527227 Tair 212096234.sln" /p:Configuration=Debug
+```
+
+**Clean Build:**
+```batch
+MSBuild "Ex05 Dan 322527227 Tair 212096234.sln" /t:Clean,Build
+```
+
+---
+
+## 🐛 Troubleshooting
+
+**Game doesn't start:**
+- Install [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
+- Check Windows version (7 or later required)
+
+**SmartScreen blocks:**
+- Click "More info" → "Run anyway"
+- Or right-click `Ex05.exe` → Properties → Unblock
+
+**Build errors:**
+- Verify Visual Studio has .NET Desktop Development workload
+- Check .NET Framework 4.7.2 SDK is installed
+
+---
+
+## 📚 Full Documentation
+
+- 📖 [README.md](README.md) - Complete documentation
+- 🎯 [HOW_TO_CREATE_RELEASE.md](HOW_TO_CREATE_RELEASE.md) - Release guide
+
+---
+
+## 👨‍💻 Authors
+
+**Dan Ofri** & **Tair Mazrahi**  
+Email: ofridan@gmail.com  
+GitHub: [@Dan-Ofri](https://github.com/Dan-Ofri)
+
+---
+
+**Enjoy the game! 🎉**
