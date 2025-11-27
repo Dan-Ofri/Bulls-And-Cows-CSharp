@@ -17,7 +17,7 @@
 
 Bulls and Cows (Mastermind) is a code-breaking game where you guess a secret color combination. Built with **C# Windows Forms**, featuring clean UI, customizable difficulty, and intelligent feedback.
 
-> **👥 Team Project:** Developed collaboratively with [@tairsa](https://github.com/tairsa). I focused on implementing the game logic, feedback system, and custom UI components using design patterns.
+> **👥 Team Project:** Developed collaboratively with [@tairsa](https://github.com/tairsa).
 
 ### 🎮 Game Rules
 - Computer generates **4 unique colors**
